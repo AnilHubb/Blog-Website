@@ -34,8 +34,8 @@ This is a fully responsive and interactive blog website built using **HTML, CSS,
 1. **Download or Clone the Repository**
  
 ```bash 
-     git clone https://github.com/yourusername/my-blog.git
-      cd my-blog 
+     git clone https://github.com/AnilHubb/Blog-Website
+      cd  Blog-Website
 ``` 
 
 2. **Open in Browser**
