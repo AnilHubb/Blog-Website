@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Understanding Flexbox</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Understanding Flexbox</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../posts.html">Posts</a>
+    </nav>
+  </header>
+  <main class="info-page">
+  <article>
+    <h2>📦 Understanding Flexbox in CSS</h2>
+    <p>
+      Flexbox (Flexible Box Layout) is a CSS layout model used to create responsive layouts and align items easily inside a container. It’s especially useful for building modern web layouts.
+    </p>
+
+    <h3>🔹 Basic Structure</h3>
+    <pre><code>/* HTML */
+<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+
+/* CSS */
+.container {
+  display: flex;
+}</code></pre>
+
+    <h3>🔸 Main Axis vs Cross Axis</h3>
+    <p>
+      - <strong>Main axis</strong> is the direction set by <code>flex-direction</code><br>
+      - <strong>Cross axis</strong> is perpendicular to the main axis
+    </p>
+
+    <h3>🔹 Common Flex Properties (Parent)</h3>
+    <ul>
+      <li><code>display: flex;</code> — enables flex container</li>
+      <li><code>flex-direction: row | column</code></li>
+      <li><code>justify-content:</code> space-between, center, etc. (horizontal alignment)</li>
+      <li><code>align-items:</code> center, stretch, etc. (vertical alignment)</li>
+      <li><code>gap:</code> spacing between items</li>
+    </ul>
+
+    <h3>🔸 Common Flex Properties (Children)</h3>
+    <ul>
+      <li><code>flex-grow</code>: how much the item should grow</li>
+      <li><code>flex-shrink</code>: how much the item should shrink</li>
+      <li><code>flex-basis</code>: default size before growing/shrinking</li>
+      <li><code>align-self</code>: overrides align-items for a single item</li>
+    </ul>
+
+    <h3>🔹 Example Layout</h3>
+    <pre><code>.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+}</code></pre>
+
+    <h3>🔸 Responsive Design with Flexbox</h3>
+    <p>
+      Flexbox makes it easier to create responsive layouts without using floats or media queries in many cases.
+    </p>
+
+    <h3>✅ Summary</h3>
+    <p>
+      Flexbox simplifies layout creation by giving you control over spacing, alignment, and sizing. It’s a key skill for frontend developers.
+    </p>
+  </article>
+</main>
+
+<section class="comment-section">
+  <h3>💬 Leave a Comment</h3>
+  <textarea id="comment-input" rows="4" placeholder="Write your comment..."></textarea>
+  <button onclick="addComment()">Post Comment</button>
+
+  <div id="comment-list"></div>
+</section>
+
+</body>
+<script src="./comments.js"></script>
+
+</html>

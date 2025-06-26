@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Topics</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header><h1>JavaScript Learned Topics</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../posts.html">Posts</a>
+    </nav>
+  </header>
+ <main class="info-page">
+  <article>
+    <h2>📘 JavaScript Topics I’ve Learned</h2>
+    <p>
+      In my JavaScript learning journey, I’ve covered essential concepts that helped me build real projects and prepare for frontend interviews. Here's a detailed summary of what I’ve learned.
+    </p>
+
+    <h3>1️⃣ Variables and Data Types</h3>
+    <ul>
+      <li><strong>let</strong>, <strong>const</strong>, and <strong>var</strong> differences</li>
+      <li>Primitive types: string, number, boolean, null, undefined, symbol</li>
+      <li>Reference types: objects, arrays, functions</li>
+    </ul>
+    <pre><code>let name = "Anil";
+const age = 22;
+var isActive = true;</code></pre>
+
+    <h3>2️⃣ Functions & Scope</h3>
+    <ul>
+      <li>Function declarations vs expressions</li>
+      <li>Arrow functions</li>
+      <li>Local vs Global scope</li>
+    </ul>
+    <pre><code>function greet() {
+  return "Hello";
+}
+const add = (a, b) => a + b;</code></pre>
+
+    <h3>3️⃣ Arrays & Array Methods</h3>
+    <ul>
+      <li>map(), filter(), reduce()</li>
+      <li>forEach(), find(), includes()</li>
+    </ul>
+    <pre><code>const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2);</code></pre>
+
+    <h3>4️⃣ Objects & Destructuring</h3>
+    <ul>
+      <li>Object creation & property access</li>
+      <li>Destructuring & spread/rest operator</li>
+    </ul>
+    <pre><code>const user = { name: "Anil", age: 22 };
+const { name, age } = user;</code></pre>
+
+    <h3>5️⃣ DOM Manipulation</h3>
+    <ul>
+      <li>querySelector, innerHTML, createElement</li>
+      <li>Changing content, styling, structure using JS</li>
+    </ul>
+    <pre><code>document.querySelector("h1").textContent = "Updated Title";</code></pre>
+
+    <h3>6️⃣ Events & Event Listeners</h3>
+    <ul>
+      <li>Click, input, submit, mouseover</li>
+      <li>How to add and remove events</li>
+    </ul>
+    <pre><code>button.addEventListener("click", () => {
+  alert("Clicked!");
+});</code></pre>
+
+    <h3>7️⃣ Asynchronous JavaScript</h3>
+    <ul>
+      <li>Callbacks, Promises, async/await</li>
+      <li>Understanding how JavaScript handles async tasks</li>
+    </ul>
+    <pre><code>async function fetchData() {
+  const response = await fetch("https://api.example.com");
+  const data = await response.json();
+}</code></pre>
+
+    <h3>8️⃣ ES6+ Features</h3>
+    <ul>
+      <li>Template literals</li>
+      <li>Default parameters</li>
+      <li>Optional chaining</li>
+    </ul>
+    <pre><code>const greet = (name = "Guest") => `Hello, ${name}!`;</code></pre>
+
+        <h3>9️⃣ Closures</h3>
+    <ul>
+      <li>A closure is a function that remembers its lexical scope even when executed outside that scope.</li>
+    </ul>
+    <pre><code>function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2</code></pre>
+
+    <h3>🔟 Hoisting</h3>
+    <ul>
+      <li>Variables and functions are hoisted to the top of their scope during compilation.</li>
+    </ul>
+    <pre><code>console.log(x); // undefined
+var x = 10;</code></pre>
+
+    <h3>1️⃣1️⃣ Event Delegation</h3>
+    <ul>
+      <li>Instead of adding listeners to each element, add one to a parent and use event.target.</li>
+    </ul>
+    <pre><code>document.querySelector("#parent").addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    console.log("Button clicked:", e.target.textContent);
+  }
+});</code></pre>
+
+    <h3>1️⃣2️⃣ Local Storage</h3>
+    <ul>
+      <li>Used to save data in the browser that stays even after the page reloads.</li>
+    </ul>
+    <pre><code>localStorage.setItem("name", "Anil");
+const name = localStorage.getItem("name");</code></pre>
+
+    <h3>1️⃣3️⃣ Fetch API</h3>
+    <ul>
+      <li>Modern way to make HTTP requests.</li>
+    </ul>
+    <pre><code>fetch("https://api.example.com")
+  .then(res => res.json())
+  .then(data => console.log(data));</code></pre>
+
+    <h3>1️⃣4️⃣ ES Modules</h3>
+    <ul>
+      <li>Split JS into multiple files using <code>export</code> and <code>import</code>.</li>
+    </ul>
+    <pre><code>// utils.js
+export const add = (a, b) => a + b;
+
+// main.js
+import { add } from './utils.js';</code></pre>
+
+    <h3>1️⃣5️⃣ Form Validation</h3>
+    <ul>
+      <li>Used to check user input before submitting a form.</li>
+    </ul>
+    <pre><code>form.addEventListener("submit", (e) => {
+  if (name.value === "") {
+    alert("Name is required");
+    e.preventDefault();
+  }
+});</code></pre>
+
+    <h3>1️⃣6️⃣ Error Handling</h3>
+    <ul>
+      <li>Use <code>try/catch</code> to prevent app crashes from unexpected errors.</li>
+    </ul>
+    <pre><code>try {
+  someUndefinedFunction();
+} catch (err) {
+  console.log("Error:", err.message);
+}</code></pre>
+
+    <h3>1️⃣7️⃣ setTimeout & setInterval</h3>
+    <ul>
+      <li>Used to delay or repeat code execution.</li>
+    </ul>
+    <pre><code>setTimeout(() => console.log("After 1s"), 1000);
+setInterval(() => console.log("Every second"), 1000);</code></pre>
+
+    <h3>1️⃣8️⃣ The this Keyword</h3>
+    <ul>
+      <li>Refers to the object that is executing the function.</li>
+    </ul>
+    <pre><code>const person = {
+  name: "Anil",
+  greet() {
+    console.log("Hi " + this.name);
+  }
+};
+person.greet();</code></pre>
+
+    <h3>1️⃣9️⃣ Debugging in JS</h3>
+    <ul>
+      <li>Use <code>console.log()</code>, breakpoints, and DevTools to find and fix bugs.</li>
+    </ul>
+    <pre><code>console.log("Debugging...");
+debugger;</code></pre>
+
+    <h3>2️⃣0️⃣ Responsive JavaScript</h3>
+    <ul>
+      <li>Reacting to screen changes or device conditions with JS.</li>
+    </ul>
+    <pre><code>window.addEventListener("resize", () => {
+  console.log("Window width:", window.innerWidth);
+});</code></pre>
+
+    <h3>✅ Final Thoughts</h3>
+    <p>
+      With these 20+ topics, I feel confident in building real-world web apps. I'm continuing to grow my skills with projects, interview prep, and frameworks like React.js.
+    </p>
+
+
+    <h3>📈 How I Practice</h3>
+    <ul>
+      <li>Daily challenges from <a href="https://www.jschallenger.com" target="_blank">JSChallenger</a></li>
+      <li>Mini projects (To-Do list, calculator, etc.)</li>
+      <li>Reading docs from <a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+    </ul>
+
+  </article>
+</main>
+
+<section class="comment-section">
+  <h3>💬 Leave a Comment</h3>
+  <textarea id="comment-input" rows="4" placeholder="Write your comment..."></textarea>
+  <button onclick="addComment()">Post Comment</button>
+
+  <div id="comment-list"></div>
+</section>
+
+</body>
+<script src="./comments.js"></script>
+
+</html>

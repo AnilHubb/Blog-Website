@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Interview Questions</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header><h1>JavaScript Interview Questions</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../posts.html">Posts</a>
+    </nav>
+  </header>
+  <main class="info-page">
+  <article>
+    <h2>🧠 JavaScript Interview Questions & Answers</h2>
+    <p>Here are some commonly asked JavaScript interview questions with clear and simple answers based on my learning and practice.</p>
+
+    <h3>❓ What is the difference between <code>let</code>, <code>const</code>, and <code>var</code>?</h3>
+    <p>
+      <strong>var</strong> is function-scoped and can be re-declared. <strong>let</strong> is block-scoped and can be updated but not re-declared. <strong>const</strong> is also block-scoped but cannot be updated or re-declared.
+    </p>
+    <pre><code>var x = 10;
+let y = 20;
+const z = 30;</code></pre>
+
+    <h3>❓ What are arrow functions?</h3>
+    <p>
+      Arrow functions are a shorter way to write functions and they do not have their own <code>this</code>.
+    </p>
+    <pre><code>const greet = () => "Hello";</code></pre>
+
+    <h3>❓ What is a closure in JavaScript?</h3>
+    <p>A closure is a function that remembers the variables from its outer scope even after the outer function has finished executing.</p>
+    <pre><code>function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}</code></pre>
+
+    <h3>❓ What is the difference between <code>==</code> and <code>===</code>?</h3>
+    <p><code>==</code> compares values with type conversion. <code>===</code> compares both value and type (strict equality).</p>
+    <pre><code>console.log(5 == "5");  // true
+console.log(5 === "5"); // false</code></pre>
+
+    <h3>❓ What is the event loop in JavaScript?</h3>
+    <p>
+      The event loop handles asynchronous code like setTimeout, Promises, etc. It moves completed tasks from the callback queue to the call stack.
+    </p>
+
+    <h3>❓ What are promises and async/await?</h3>
+    <p>
+      Promises represent future results of asynchronous operations. <code>async/await</code> makes handling promises easier.
+    </p>
+    <pre><code>async function fetchData() {
+  const res = await fetch("url");
+  const data = await res.json();
+  console.log(data);
+}</code></pre>
+
+    <h3>❓ What is hoisting?</h3>
+    <p>
+      JavaScript moves variable and function declarations to the top of their scope before execution.
+    </p>
+    <pre><code>console.log(a); // undefined
+var a = 5;</code></pre>
+
+    <h3>❓ What is the use of <code>this</code> keyword?</h3>
+    <p>
+      <code>this</code> refers to the object calling the function. In arrow functions, <code>this</code> refers to the outer context.
+    </p>
+
+    <h3>❓ What is event bubbling?</h3>
+    <p>
+      When an event occurs on an element, it bubbles up to its parent elements unless stopped.
+    </p>
+
+    <h3>❓ How does JavaScript handle memory management?</h3>
+    <p>
+      JavaScript uses automatic garbage collection. Unreachable objects in memory are removed automatically.
+    </p>
+
+        <h3>❓ What are callback functions?</h3>
+    <p>
+      A callback is a function passed as an argument to another function to be called later.
+    </p>
+    <pre><code>function greet(name, callback) {
+  console.log("Hi " + name);
+  callback();
+}
+greet("Anil", () => console.log("Welcome!"));</code></pre>
+
+    <h3>❓ What is callback hell and how can you avoid it?</h3>
+    <p>
+      Callback hell happens when callbacks are nested deeply, making code hard to read. You can avoid it using Promises or async/await.
+    </p>
+
+    <h3>❓ What is the difference between <code>null</code> and <code>undefined</code>?</h3>
+    <ul>
+      <li><strong>null</strong> is an assignment value (intentional absence of any value).</li>
+      <li><strong>undefined</strong> means a variable has been declared but not assigned.</li>
+    </ul>
+    <pre><code>let x;
+console.log(x); // undefined
+x = null;
+console.log(x); // null</code></pre>
+
+    <h3>❓ What are <code>call()</code>, <code>apply()</code>, and <code>bind()</code>?</h3>
+    <p>
+      These methods allow function borrowing by setting the value of <code>this</code>.
+    </p>
+    <pre><code>const person = { name: "Anil" };
+function sayHi() {
+  console.log("Hi " + this.name);
+}
+sayHi.call(person);</code></pre>
+
+    <h3>❓ What is a pure function?</h3>
+    <p>
+      A pure function has no side effects and always returns the same output for the same input.
+    </p>
+
+    <h3>❓ What is the difference between synchronous and asynchronous code?</h3>
+    <ul>
+      <li><strong>Synchronous:</strong> Code runs line by line and waits.</li>
+      <li><strong>Asynchronous:</strong> Code does not wait; it continues executing.</li>
+    </ul>
+
+    <h3>❓ What is the use of <code>setTimeout()</code> and <code>setInterval()</code>?</h3>
+    <p>
+      <code>setTimeout()</code> delays execution once, while <code>setInterval()</code> repeats execution.
+    </p>
+    <pre><code>setTimeout(() => console.log("After 1s"), 1000);
+setInterval(() => console.log("Every 1s"), 1000);</code></pre>
+
+    <h3>❓ What is the difference between deep copy and shallow copy?</h3>
+    <p>
+      A shallow copy copies only the reference. A deep copy duplicates all nested objects as well.
+    </p>
+    <pre><code>const a = { name: "Anil" };
+const b = Object.assign({}, a); // shallow
+const c = JSON.parse(JSON.stringify(a)); // deep</code></pre>
+
+    <h3>❓ What are template literals?</h3>
+    <p>
+      Template literals allow multi-line strings and string interpolation using backticks.
+    </p>
+    <pre><code>const name = "Anil";
+console.log(`Hello, ${name}!`);</code></pre>
+
+    <h3>❓ What is destructuring?</h3>
+    <p>
+      Destructuring allows unpacking values from arrays or objects easily.
+    </p>
+    <pre><code>const person = { name: "Anil", age: 22 };
+const { name, age } = person;</code></pre>
+
+    <h3>✅ Final Note</h3>
+    <p>
+      These questions helped me revise and practice for frontend interviews. I’ll keep updating this post as I learn more.
+    </p>
+  </article>
+</main>
+
+<section class="comment-section">
+  <h3>💬 Leave a Comment</h3>
+  <textarea id="comment-input" rows="4" placeholder="Write your comment..."></textarea>
+  <button onclick="addComment()">Post Comment</button>
+
+  <div id="comment-list"></div>
+</section>
+</body>
+<script src="./comments.js"></script>
+
+</html>
